@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Battery = function(capacity, remaining) {
+        this.isCharge  = false;
+        this.setInfo(capacity, remaining);
+    }
+    Battery.prototype.statusBattery = function(){
+        return ((this.remaining/this.capacity)*100)>>0;
+    }
+
+    Battery.prototype.displayBattery = function(){
+        return this.statusBattery()+'%';
+    }
+    Battery.prototype.setInfo = function(capacity, remaining){
+        this.capacity  = Number(capacity);
+        this.remaining = Number(remaining);
+        return this;
+    }
+    Battery.prototype.onCharge = function(charge){
+        this.isCharge = true;
+        this.remaining += Number(charge);
+    }
+    Battery.prototype.offCharge = function(){
+        this.isCharge = false;
+    }
+    let Messenger = function() {
+        this.writing = {to:null, text:null};
+        this.inBox   = [];
+        this.sent    = [];
+    }
+</script>
+</body>
+</html>

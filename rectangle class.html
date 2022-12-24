@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="name" width="100" height="100" style="border: 1px solid rebeccapurple">
+</canvas>
+
+<script>
+    class Canvat {
+        width;
+        height;
+        constructor (width,height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+        setHeight(height) {
+            this.height = height;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let mycanvat = new Canvat(150,50);
+    let width = mycanvat.getWidth();
+    let height = mycanvat.getHeight();
+
+
+    document.write(mycanvat.getWidth() + width + height)
+
+    let canvas = document.getElementById("name");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle="red";
+    ctx.fillRect(10, 10, 50,50)
+</script>
+</body>
+</html>
